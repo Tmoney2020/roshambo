@@ -10,3 +10,147 @@ body {
   margin: 0;
   min-height: 100%;
 }
+
+header {
+  border-bottom: 1px solid rgb(0, 0, 0, .15);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, .05);
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  min-width: 100%;
+  background-color: rgba(186, 209, 231, 0.774);
+  opacity: 0.8;
+  font-family: serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #24292e;
+  padding: .5rem;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+
+header .reset {
+  position: absolute;
+  right: 50px;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+header .RPS {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+h1 {
+  text-align: center;
+  font-family: serif;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.handP1 {
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.handP2 {
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.choice {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  background-color: rgba(186, 209, 231, 0.774);
+  opacity: .8;
+}
+
+.scissorsP1 {
+  font-size: 2rem;
+}
+
+.paperP1 {
+  font-size: 2rem;
+}
+
+.rockP1 {
+  font-size: 2rem;
+}
+
+.scissorsP2 {
+  font-size: 2rem;
+}
+
+.paperP2 {
+  font-size: 2rem;
+}
+
+.rockP2 {
+  font-size: 2rem;
+}
+
+.teamname1, .teamname2 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.Player {
+  margin-top: 2rem;
+  border: 2px solid black;
+  border-radius: .5rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(36, 140, 236, 0.5);
+}
+
+main div h2 {
+  margin-top: 2rem;
+  margin-bottom: 0;
+  ;
+  font-size: 2rem;
+}
+
+main div input {
+  width: 100%;
+  margin-top: 10px;
+  min-height: 1.5rem;
+}
+
+.restartButton {
+  border: 1px solid black;
+  border-radius: .5rem;
+  min-width: 33%;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(253, 128, 128);
+  box-shadow: 0 0.5rem 1.25rem rgba(253, 101, 101, 0.7);
+  margin-top: 2rem;
+  opacity: .7;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
