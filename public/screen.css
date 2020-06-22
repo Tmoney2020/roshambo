@@ -3,7 +3,8 @@
 }
 
 html {
-  height: 100%;
+  background-image: url('https://wallpaperhd.wiki/wp-content/uploads/mario-video-game-backgrounds-445906.jpg');
+  background-size: cover;
 }
 
 body {
@@ -54,6 +55,7 @@ header .RPS {
 h1 {
   text-align: center;
   font-family: serif;
+  color: whitesmoke;
 }
 
 main {
@@ -82,7 +84,7 @@ main {
   justify-content: space-around;
   margin: 0;
   background-color: rgba(186, 209, 231, 0.774);
-  opacity: .8;
+  opacity: .9;
 }
 
 .scissorsP1, .paperP1, .rockP1, .scissorsP2, .paperP2, .rockP2, .lizardP1, .spockP1, .lizardP2, .spockP2 {
@@ -95,6 +97,7 @@ main {
   margin-bottom: 1rem;
   justify-content: center;
   align-items: center;
+  color: whitesmoke;
 }
 
 .Player {
@@ -112,9 +115,10 @@ main div h2 {
 }
 
 main div input {
-  width: 100%;
+  width: 98%;
   margin-top: 10px;
   min-height: 1.5rem;
+  opacity: 0.8;
 }
 
 .restartButton {
@@ -128,6 +132,7 @@ main div input {
   box-shadow: 0 0.5rem 1.25rem rgba(253, 101, 101, 0.7);
   margin-top: 2rem;
   opacity: .7;
+  margin-bottom: 2rem;
 }
 
 footer {
