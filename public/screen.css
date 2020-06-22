@@ -85,27 +85,7 @@ main {
   opacity: .8;
 }
 
-.scissorsP1 {
-  font-size: 2rem;
-}
-
-.paperP1 {
-  font-size: 2rem;
-}
-
-.rockP1 {
-  font-size: 2rem;
-}
-
-.scissorsP2 {
-  font-size: 2rem;
-}
-
-.paperP2 {
-  font-size: 2rem;
-}
-
-.rockP2 {
+.scissorsP1, .paperP1, .rockP1, .scissorsP2, .paperP2, .rockP2, .lizardP1, .spockP1, .lizardP2, .spockP2 {
   font-size: 2rem;
 }
 

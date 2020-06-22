@@ -36,24 +36,36 @@ function checkWin() {
   const teamOneNameForWin = document.querySelector('.teamname1 h2')
   const teamTwoNameForWin = document.querySelector('.teamname2 h2')
 
-  if (playerOneChoice === 'scissors' && playerTwoChoice === 'paper') {
+  if (
+    (playerOneChoice === 'rock' && playerTwoChoice === 'lizard') ||
+    (playerOneChoice === 'rock' && playerTwoChoice === 'scissors') ||
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'spock') ||
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'scissors' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'scissors' && playerTwoChoice === 'lizard') ||
+    (playerOneChoice === 'paper' && playerTwoChoice === 'rock') ||
+    (playerOneChoice === 'paper' && playerTwoChoice === 'spock') ||
+    (playerOneChoice === 'spock' && playerTwoChoice === 'scissors') ||
+    (playerOneChoice === 'spock' && playerTwoChoice === 'rock')
+  ) {
     winningHeader.textContent = `The winner is ${teamOneNameForWin.textContent}`
   }
-  if (playerOneChoice === 'rock' && playerTwoChoice === 'paper') {
+
+  if (
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'rock') ||
+    (playerOneChoice === 'scissors' && playerTwoChoice === 'rock') ||
+    (playerOneChoice === 'spock' && playerTwoChoice === 'lizard') ||
+    (playerOneChoice === 'paper' && playerTwoChoice === 'lizard') ||
+    (playerOneChoice === 'paper' && playerTwoChoice === 'scissors') ||
+    (playerOneChoice === 'lizard' && playerTwoChoice === 'scissors') ||
+    (playerOneChoice === 'rock' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'spock' && playerTwoChoice === 'paper') ||
+    (playerOneChoice === 'scissors' && playerTwoChoice === 'spock') ||
+    (playerOneChoice === 'rock' && playerTwoChoice === 'spock')
+  ) {
     winningHeader.textContent = `The winner is ${teamTwoNameForWin.textContent}`
   }
-  if (playerOneChoice === 'paper' && playerTwoChoice === 'rock') {
-    winningHeader.textContent = `The winner is ${teamOneNameForWin.textContent}`
-  }
-  if (playerOneChoice === 'paper' && playerTwoChoice === 'scissors') {
-    winningHeader.textContent = `The winner is ${teamTwoNameForWin.textContent}`
-  }
-  if (playerOneChoice === 'scissors' && playerTwoChoice === 'rock') {
-    winningHeader.textContent = `The winner is ${teamTwoNameForWin.textContent}`
-  }
-  if (playerOneChoice === 'rock' && playerTwoChoice === 'scissors') {
-    winningHeader.textContent = `The winner is ${teamOneNameForWin.textContent}`
-  }
+
   if (playerOneChoice === playerTwoChoice) {
     winningHeader.textContent = 'Draw! Choose again'
   }
@@ -62,12 +74,13 @@ function checkWin() {
 function shoot() {
   const newPlayerOneChoice = document.getElementById('handP1')
   const newPlayerTwoChoice = document.getElementById('handP2')
-  const rock =
-    'https://cdn.instructables.com/F02/BBV9/I7Q0TFTU/F02BBV9I7Q0TFTU.LARGE.jpg?auto=webp&frame=1&fit=bounds'
-  const paper =
-    'https://cdn.instructables.com/FT9/YL66/I7Q0TFEK/FT9YL66I7Q0TFEK.LARGE.jpg?auto=webp&frame=1&fit=bounds'
+  const rock = 'https://i.imgur.com/ooArqzR.gif'
+  const paper = 'https://media.giphy.com/media/PPuctmBKTFDMs/giphy.gif'
   const scissors =
-    'https://cdn.instructables.com/FO4/M1EF/I7Q0TFES/FO4M1EFI7Q0TFES.LARGE.jpg?auto=webp&frame=1&fit=bounds'
+    'https://media.tenor.com/images/ce75301dc23bbd5b78500a62c9384efb/tenor.gif'
+  const lizard = 'https://i.gifer.com/KQG.gif'
+  const spock =
+    'https://66.media.tumblr.com/dae67b641a97a28008c9984b27f3a200/tumblr_mn6tziLHh11rhg5lso1_500.gif'
 
   if (playerOneChoice === 'rock') {
     newPlayerOneChoice.setAttribute('src', rock)
@@ -78,6 +91,13 @@ function shoot() {
   if (playerOneChoice === 'scissors') {
     newPlayerOneChoice.setAttribute('src', scissors)
   }
+  if (playerOneChoice === 'spock') {
+    newPlayerOneChoice.setAttribute('src', spock)
+  }
+  if (playerOneChoice === 'lizard') {
+    newPlayerOneChoice.setAttribute('src', lizard)
+  }
+
   if (playerTwoChoice === 'rock') {
     newPlayerTwoChoice.setAttribute('src', rock)
   }
@@ -86,6 +106,12 @@ function shoot() {
   }
   if (playerTwoChoice === 'scissors') {
     newPlayerTwoChoice.setAttribute('src', scissors)
+  }
+  if (playerTwoChoice === 'spock') {
+    newPlayerTwoChoice.setAttribute('src', spock)
+  }
+  if (playerTwoChoice === 'lizard') {
+    newPlayerTwoChoice.setAttribute('src', lizard)
   }
   checkWin()
 }
@@ -126,6 +152,22 @@ function updateTeamTwoName(event) {
   teamTwoLog.textContent = event.target.value
 }
 
+function handleClickSpockP1(event) {
+  playerOneChoice = 'spock'
+}
+
+function handleClickSpockP2(event) {
+  playerTwoChoice = 'spock'
+}
+
+function handleClickLizardP1(event) {
+  playerOneChoice = 'lizard'
+}
+
+function handleClickLizardP2(event) {
+  playerTwoChoice = 'lizard'
+}
+
 const main = () => {
   const playerOneRock = document.querySelector('.rockP1')
   playerOneRock.addEventListener('click', handleClickRockP1)
@@ -144,6 +186,18 @@ const main = () => {
 
   const playerTwoScissors = document.querySelector('.scissorsP2')
   playerTwoScissors.addEventListener('click', handleClickScissorsP2)
+
+  const playerOneSpock = document.querySelector('.spockP1')
+  playerOneSpock.addEventListener('click', handleClickSpockP1)
+
+  const playerTwoSpock = document.querySelector('.spockP2')
+  playerTwoSpock.addEventListener('click', handleClickSpockP2)
+
+  const playerOneLizard = document.querySelector('.lizardP1')
+  playerOneLizard.addEventListener('click', handleClickLizardP1)
+
+  const playerTwoLizard = document.querySelector('.lizardP2')
+  playerTwoLizard.addEventListener('click', handleClickLizardP2)
 
   const gameShoot = document.querySelector('.restartButton')
   gameShoot.addEventListener('click', shoot)
